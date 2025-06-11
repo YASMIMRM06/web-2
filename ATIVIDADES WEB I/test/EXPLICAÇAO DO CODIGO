@@ -1,0 +1,137 @@
+### 1. **Estrutura HTML**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Simples com React.js</title>
+  <!-- Carregar React e ReactDOM via CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      text-align: center;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      margin-top: 50px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 600px;
+      margin-bottom: 100px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ff69b4;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
+#### Explicação:
+
+1. **`<head>` e `<body>`**:
+   - O código começa com a declaração do tipo de documento (`<!DOCTYPE html>`) e o idioma da página (`<html lang="en">`).
+   - Dentro do `<head>`, temos informações sobre a codificação de caracteres (`UTF-8`) e o `viewport` para garantir que a página se ajuste corretamente em dispositivos móveis.
+   - O título da página é definido como "Site Simples com React.js".
+
+2. **Carregando as Bibliotecas do React**:
+   - Usamos duas `<script>` tags para carregar as bibliotecas React e ReactDOM diretamente da CDN.
+   - `react.development.js` e `react-dom.development.js` são as versões de desenvolvimento das bibliotecas.
+   - Essas bibliotecas são necessárias para poder usar o React e renderizar o conteúdo React na página HTML.
+
+3. **Estilo CSS**:
+   - A estilização da página define a aparência do site. Usamos CSS para personalizar o visual do site:
+     - **`body`**: Define o estilo básico do corpo da página, como a fonte, cor de fundo e alinhamento de texto.
+     - **`.container`**: Estiliza o conteúdo principal da página, com um fundo branco, padding, bordas arredondadas e uma sombra sutil para dar um efeito de destaque.
+     - **`footer`**: Estiliza o rodapé, tornando-o fixo na parte inferior da página. Ele também inclui um link para o React, estilizado com uma cor personalizada.
+
+4. **`<div id="root"></div>`**:
+   - Este é o elemento onde o conteúdo do React será renderizado. O React manipula o DOM a partir desse ponto, injetando componentes dinâmicos dentro da `div` com o id "root".
+
+---
+
+### 2. **Código JavaScript (React)**
+
+```javascript
+// Exemplo de componente React
+const App = () => {
+  return (
+    <div>
+      <div className="container">
+        <h1>Bem-vindo ao meu site com React.js!</h1>
+        <p>Este é um site simples criado com React, com um footer fixo.</p>
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+// Componente Footer
+const Footer = () => {
+  return (
+    <footer>
+      <p>Feito por Yasmim | <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">Saiba mais sobre React</a></p>
+    </footer>
+  );
+};
+
+// Renderizar o componente na página
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+```
+
+#### Explicação:
+
+1. **Definindo o Componente `App`**:
+   - `const App = () => { ... }` define um componente funcional em React chamado `App`.
+   - Dentro do componente `App`, estamos retornando um JSX (JavaScript XML) que será exibido na página. O JSX é uma sintaxe especial do React que permite escrever HTML diretamente dentro do JavaScript.
+   - **`<div className="container">`**: Contém um título (`<h1>`) e um parágrafo (`<p>`) explicando o objetivo do site. Eles são envoltos dentro de um `div` com a classe "container", que aplica os estilos definidos no CSS.
+   - **`<Footer />`**: O componente `Footer` é renderizado abaixo do conteúdo principal, criando um rodapé fixo na parte inferior da página.
+
+2. **Componente `Footer`**:
+   - `const Footer = () => { ... }` define o componente `Footer`.
+   - Dentro do `Footer`, retornamos um `<footer>` que contém um parágrafo com o texto "Feito por Yasmim" e um link para o site oficial do React. O link é estilizado para mudar a cor ao passar o mouse, conforme a regra CSS.
+   
+3. **Renderizando o Componente React**:
+   - `ReactDOM.createRoot(document.getElementById("root")).render(<App />);`: 
+     - Aqui, usamos o ReactDOM para renderizar o componente `App` no `div` com o id "root" na página HTML.
+     - `ReactDOM.createRoot` é usado para inicializar a renderização do React e `render(<App />)` insere o componente `App` dentro do `div` com o id "root".
+
+---
+
+### Resumo Final:
+
+- O código HTML carrega as bibliotecas React e ReactDOM via CDN e define o layout básico da página.
+- O código JavaScript cria dois componentes: `App` (que contém o conteúdo principal da página) e `Footer` (que exibe o rodapé fixo).
+- Usando ReactDOM, o componente `App` é renderizado na `div` com o id `root`, e o `Footer` é exibido na parte inferior da página.

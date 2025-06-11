@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Simples com React.js</title>
+  <!-- Carregar React e ReactDOM via CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      text-align: center;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      margin-top: 50px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 600px;
+      margin-bottom: 100px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ff69b4;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+// Exemplo de componente React
+const App = () => {
+  return (
+    <div>
+      <div className="container">
+        <h1>Bem-vindo ao meu site com React.js!</h1>
+        <p>Este é um site simples criado com React, com um footer fixo.</p>
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+// Componente Footer
+const Footer = () => {
+  return (
+    <footer>
+      <p>Feito por Yasmim | <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">Saiba mais sobre React</a></p>
+    </footer>
+  );
+};
+
+// Renderizar o componente na página
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+
+

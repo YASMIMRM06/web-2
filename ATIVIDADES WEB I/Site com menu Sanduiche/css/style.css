@@ -1,0 +1,309 @@
+/* Resetando as margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral */
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    width: 100%;
+}
+
+#cabecalho {
+    height: 250px;
+    background-color: rgb(206, 207, 243);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#book-stack {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Menu de navegação */
+#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(230, 230, 250);
+    padding: 10px;
+}
+
+#menu p {
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+#menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+#menu .menu-toggle {
+    display: none;
+}
+
+/* Seção principal */
+#home {
+    margin: 0;
+    padding: 20px;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centralizar verticalmente */
+    align-items: center; /* Centralizar horizontalmente */
+    text-align: center; /* Centralizar o texto */
+}
+
+#biblioteca {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Galeria */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 1rem;
+    margin: 20px;
+}
+.gallery__item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery__item:nth-child(2),
+.gallery__item:nth-child(3) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.gallery__item:nth-child(4) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.gallery__item:nth-child(5),
+.gallery__item:nth-child(6) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin: 10px;
+}
+
+/* Formulário de Contato */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+form label {
+    margin: 5px 0;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #6a5acd;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #5b4bb7;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgb(206, 207, 243);
+    color: #fff;
+}
+
+/* --- Media Queries --- */
+
+/* Media Queries para responsividade */
+@media screen and (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    #biblioteca {
+        width: 100%;
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+/* Para dispositivos com tela muito pequena (celulares) */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    #menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #menu .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    #menu p {
+        margin: 10px 0;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer {
+        padding: 10px;
+        color: #333;
+    }
+}
+
+/* Para dispositivos com telas médias (tablets) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    #menu {
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(230, 230, 250);
+        padding: 10px;
+    }
+
+    #menu .menu-toggle {
+        display: none;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    footer {
+        padding: 25px;
+        color: rgb(87, 84, 84);
+    }
+}
+
+/* Para telas grandes */
+@media screen and (min-width: 769px) {
+    .gallery {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+/* Ícone do menu hambúrguer */
+#hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#menu {
+    display: flex;
+    gap: 20px;
+}
+
+/* Estilos para telas pequenas */
+@media (max-width: 768px) {
+    #menu {
+        display: none; /* Ocultar o menu */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #f0f0f0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #hamburger-menu {
+        display: block; /* Exibir ícone de menu */
+    }
+
+    #menu.show {
+        display: flex; /* Mostrar o menu quando ativado */
+    }
+}
+/* Ajuste da imagem na página inicial */
+#home-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto; /* Centraliza horizontalmente */
+    border-radius: 8px; /* Adiciona bordas arredondadas */
+}
+
+/* Para telas pequenas */
+@media (max-width: 480px) {
+    #home-img {
+        width: 90%; /* Mantém a imagem quase do tamanho total da tela */
+    }
+}
+
+/* Para tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    #home-img {
+        width: 80%; /* Ajuste para tablets */
+    }
+}
+
+/* Para telas grandes */
+@media (min-width: 769px) {
+    #home-img {
+        width: 50%; /* Ajuste para desktops */
+    }
+}
+

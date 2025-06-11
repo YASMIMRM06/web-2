@@ -1,0 +1,47 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+#hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#menu {
+    display: flex;
+    gap: 20px;
+}
+
+/* Estilos para telas pequenas */
+@media (max-width: 768px) {
+    #menu {
+        display: none; /* Ocultar o menu */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #f0f0f0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #hamburger-menu {
+        display: block; /* Exibir ícone de menu */
+    }
+
+    #menu.show {
+        display: flex; /* Mostrar o menu quando ativado */
+    }
+}

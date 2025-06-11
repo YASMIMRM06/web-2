@@ -1,0 +1,421 @@
+
+/* codigo css dia 12 do 11 de 2024*/
+/* Resetando as margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #f0f0f0;
+    color: #333;
+    width: 100%;
+}
+
+header {
+    width: 100%;
+}
+
+#cabecalho {
+    height: 250px;
+    background-color: rgb(206, 207, 243);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#book-stack {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Menu de navegação */
+#menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(230, 230, 250);
+    padding: 10px;
+}
+
+#menu p {
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+#menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Seção principal do Home */
+#home {
+    margin: 20px;
+    max-width: 900px;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+
+/* Estilo para a história */
+#homehistory {
+    text-align: justify;
+    padding: 50px 100px;
+    text-shadow: #333;
+}
+
+/* Galeria */
+.gallery {
+    display: grid;
+/* Define a estrutura da grid com 6 colunas e 6 linhas */
+grid-template-columns: repeat(6, 1fr); /* Cria 6 colunas de largura igual, dividindo igualmente o espaço disponível */
+grid-template-rows: repeat(6, 5vw); /* Cria 6 linhas, com altura de 5% da largura da tela (viewport) */
+grid-gap: 1.5rem; /* Define o espaçamento de 1.5rem entre as células da grid (colunas e linhas) */
+
+}
+
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.social {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin: 10px;
+}
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* --- Media Queries --- */
+
+/* Para dispositivos com tela muito pequena (celulares) */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    #cabecalho {
+        height: auto;
+    }
+
+    #menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #menu p {
+        margin: 10px 0;
+    }
+
+    #home {
+        margin: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        width: 100%;
+        margin: 1rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .gallery__item {
+        grid-column: span 2;
+    }
+
+    footer {
+        padding: 10px;
+        color: #333;
+    }
+}
+
+/* Para dispositivos com telas médias (tablets) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    #cabecalho {
+        height: 200px;
+    }
+
+    #menu {
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(230, 230, 250);
+        padding: 10px;
+    }
+
+    #home {
+        margin: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        width: 80%;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 1.5rem;
+    }
+
+    footer {
+        padding: 25px;
+        color: rgb(87, 84, 84);
+    }
+}
+
+
+/* Para desktops e telas grandes */
+@media screen and (min-width: 769px) {
+    .gallery {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/*contatos base*
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Book Haven</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div id="cabecalho">
+            <img id=book-stack src="img/book-stack.png" alt="Book">
+        </div>
+
+        <nav id="menu">
+            <p><a href="historia.html">História</a></p>
+            <a href="galeria.html"><p>Galeria</p></a>
+            <a href="contatos.html"><p>Contato</p></a>
+    </header>
+   <main>
+   
+    
+    
+    </main>
+
+    <footer>
+        &copy; Book Haven
+        <br>Brasil.
+        <br>2024 Yasmim Russi Mariano - Todos os direitos reservados.
+    <div></div>
+        <a href="https://twitter.com" target="_blank">
+            <img id=social src="E:\oo-tarefa1-MOCHIYASMIM\img\twitter.png" alt="Twitter" class="social">
+        </a>
+
+        <a href="https://instagram.com" target="_blank">
+            <img id=social src="E:\oo-tarefa1-MOCHIYASMIM\img\instagram.png" alt="Instagram" class="social">
+        </a>
+
+        <a href="https://facebook.com" target="_blank">
+            <img id=social src="E:\oo-tarefa1-MOCHIYASMIM\img\facebook.png" alt="Facebook" class="social">
+        </a>
+    </footer>
+</body>
+</html>
+
+/*galeria base*/
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Haven</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div id="cabecalho">
+            <img id="book-stack" src="img/book-stack.png" alt="Book">
+        </div>
+
+        <nav id="menu">
+            <a href="Home.html"><p>Home</p></a>
+            <a href="historia.html"><p>História</p></a>
+            <a href="contatos.html"><p>Contato</p></a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="gallery">
+                <figure class="gallery__item">
+                    <img src="img/book and coffe.jpg" alt="book 1" class="gallery__img">
+                </figure>
+                <figure class="gallery__item">
+                    <img src="img/biblioteca moca.jpg" alt="biblioteca" class="gallery__img">
+                </figure>
+                <figure class="gallery__item">
+                    <img src="img/reading online.jpg" alt="reading online" class="gallery__img">
+                </figure>
+                <figure class="gallery__item">
+                    <img src="img/biblioteca.jpg" alt="biblioteca" class="gallery__img">
+                </figure>
+                <figure class="gallery__item">
+                    <img src="img/leitora.jpg" alt="leitora" class="gallery__img">
+                </figure>
+                <figure class="gallery__item">
+                    <img src="img/livromar.jpg" alt="livromar" class="gallery__img">
+                </figure>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Book Haven 
+        <br>Brasil.
+        <br>2024 Yasmim Russi Mariano - Todos os direitos reservados.
+        <div id="footerr"></div>
+        <a href="https://twitter.com" target="_blank">
+            <img src="img/twitter.png" alt="Twitter" class="social">
+        </a>
+
+        <a href="https://instagram.com" target="_blank">
+            <img src="img/instagram.png" alt="Instagram" class="social">
+        </a>
+
+        <a href="https://facebook.com" target="_blank">
+            <img src="img/facebook.png" alt="Facebook" class="social">
+        </a>
+    </footer>
+
+</body>
+</html>
+
+/*historia base*/
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Haven</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div id="cabecalho">
+            <img id=book-stack src="img/book-stack.png" alt="Book">
+            
+        </div>
+
+        <nav id="menu">
+            <a href="Home.html"><p>Home</p></a>
+            <a href="galeria.html"><p>Galeria</p></a>
+            <a href="contatos.html"><p>Contato</p></a>
+        </nav>
+        <main>
+            <section id="homehistory">
+    <p>Sempre fui apaixonado por livros, mas sentia falta de um espaço online onde pudesse compartilhar minha paixão e me conectar com outros leitores. Em 2017, ao navegar por blogs e resenhas de livros, percebi que as plataformas existentes não ofereciam a conexão profunda que eu buscava. Foi aí que surgiu a ideia de criar um site que fosse mais do que apenas resenhas, mas um espaço acolhedor, informativo e interativo para leitores.
+
+        Com pouco conhecimento em programação, comecei a aprender sobre a criação de sites e escolhi uma plataforma fácil de usar. O nome "The Book Haven" reflete a ideia de um refúgio para os amantes de livros. O design do site era simples e aconchegante, inspirado em bibliotecas. Criei seções de resenhas, lançamentos, dicas de leitura e fóruns para promover discussões entre leitores.
+        
+        O site cresceu lentamente, mas logo se tornou mais do que uma simples plataforma de resenhas. Introduzi vídeos de resenhas e convidei influenciadores literários a contribuírem. Além disso, adicionei uma galeria de fotos e uma seção de "livros recomendados", onde a comunidade podia sugerir livros.
+        
+        O verdadeiro sucesso veio quando percebi que o site não era mais apenas meu, mas de uma comunidade global de leitores. Recebi feedbacks incríveis de pessoas que encontraram seus próximos livros favoritos através do site.
+        
+        Hoje, "The Book Haven" é uma comunidade ativa, com uma newsletter semanal e um fórum vibrante. O site cresceu além do que eu imaginava, mas o mais gratificante é saber que criei um espaço onde leitores de todo o mundo podem se conectar, compartilhar e se apaixonar por livros..</p>
+
+            </main>
+    </header>
+    <footer>
+        &copy; Book Haven 
+        <br>Brasil.
+        <br>2024 Yasmim Russi Mariano - Todos os direitos reservados.
+    <div id="footerr"></div>
+        <a href="https://twitter.com" target="_blank">
+            <img id=social src="E:\oo-tarefa1-MOCHIYASMIM\img\twitter.png" alt="Twitter" class="social">
+        </a>
+
+        <a href="https://instagram.com" target="_blank">
+            <img id=social src="E:\oo-tarefa1-MOCHIYASMIM\img\instagram.png" alt="Instagram" class="social">
+        </a>
+
+        <a href="https://facebook.com" target="_blank">
+            <img id=social src="E:\oo-tarefa1-MOCHIYASMIM\img\facebook.png" alt="Facebook" class="social">
+        </a>
+    </footer>
+</body>
+</html>
+
+/*home base*/
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Book Haven</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div id="cabecalho">
+            <img id="book-stack" src="img/book-stack.png" alt="Book">
+        </div>
+
+        <nav id="menu">
+            <a href="historia.html"><p>História</p></a>
+            <a href="galeria.html"><p>Galeria</p></a>
+            <a href="contatos.html"><p>Contato</p></a>
+        </nav>
+    </header>
+
+   <main>
+    <section id="home">
+        <h1>Olá, nós somos</h1>
+        <h2>Book Haven</h2>
+        <h2>Bem-Vindo ao nosso site!</h2>
+    </section>
+
+    <section>
+        <img id="biblioteca" src="img/biblioteca moca.jpg" alt="delicious-chocolate-cake" width="300px" height="300px">
+    </section>
+</main>
+
+    <footer>
+        &copy; Book Haven<br>Brasil.<br>2024 Yasmim Russi Mariano - Todos os direitos reservados.
+        <div></div>
+        <a href="https://twitter.com" target="_blank">
+            <img src="E:\oo-tarefa1-MOCHIYASMIM\img\twitter.png" alt="Twitter" class="social">
+        </a>
+
+        <a href="https://instagram.com" target="_blank">
+            <img src="E:\oo-tarefa1-MOCHIYASMIM\img\instagram.png" alt="Instagram" class="social">
+        </a>
+
+        <a href="https://facebook.com" target="_blank">
+            <img src="E:\oo-tarefa1-MOCHIYASMIM\img\facebook.png" alt="Facebook" class="social">
+        </a>
+    </footer>
+</body>
+</html>
